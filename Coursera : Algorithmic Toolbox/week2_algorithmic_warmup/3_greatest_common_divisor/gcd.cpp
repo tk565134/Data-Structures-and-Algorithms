@@ -11,10 +11,13 @@ int gcd_naive(int a, int b) {
   }
   return current_gcd;
 }
-
+int fast_gcd(int a, int b){
+    if(a==0) return b;
+    return fast_gcd(b%a, a);
+}
 int main() {
   int a, b;
   std::cin >> a >> b;
-  std::cout << gcd_naive(a, b) << std::endl;
+  std::cout << fast_gcd(a, b) << std::endl;
   return 0;
 }
